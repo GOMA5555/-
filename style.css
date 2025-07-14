@@ -1,0 +1,229 @@
+.shippori-mincho-regular {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.two-column {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* スマホ対応 */
+}
+
+.text-block {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.image-block {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.image-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-weight: normal;
+  position: relative;
+  margin: 2rem 0 1.5rem;
+  font-family: 'Playfair Display', serif;
+  color: #3e3a39;
+}
+
+h2::before,
+h2::after {
+  content: "❦";
+  display: inline-block;
+  margin: 0 0.5em;
+  color: #a67c52;
+  font-size: 1.2em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fdf8f3;
+  color: #4b3f36;
+}
+
+header, #topBtn, #musicToggle {
+  background-color: #3e3a39;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d3c2ae;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+body {
+  line-height: 1.6;
+  background: #f5f3ef;
+  color: #333;
+}
+
+.header {
+  background: #3e3a39;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-toggle,
+.hamburger {
+  display: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.hero-title {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+section {
+  padding: 2rem 1rem;
+}
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.menu-item {
+  width: 200px;
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.map-container {
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #3e3a39;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: none;
+  cursor: pointer;
+}
+
+#musicToggle {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #c8b6a6;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #3e3a39;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+
+    .menu-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item {
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .menu-toggle:checked + .hamburger + .nav {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav li {
+    padding: 1rem;
+    border-top: 1px solid #555;
+  }
+}

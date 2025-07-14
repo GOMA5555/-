@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>架空喫茶 後藤</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Shippori+Mincho&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">喫茶後藤</div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <nav class="nav">
+      <ul>
+        <li><a href="#about">お店について</a></li>
+        <li><a href="#menu">メニュー</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="images/main_visual.jpg" alt="店の写真" class="hero-img" />
+      <h1 class="hero-title">喫茶後藤</h1>
+    </section>
+
+    <section id="about">
+		<h2>お店について</h2>
+		<div class="two-column">
+			<div class="text-block">
+     			<p>多分美味しいコーヒー、熱々のカレー。</p>
+				<p>ゆるい幸せと多分美味しいメニューを提供します。</p>
+			</div>
+			<div class="image-block">
+				<img src="images/sub_visual.JPG" alt="こんな感じの雰囲気です">
+			</div>
+		</div>
+    </section>
+
+    <section id="menu">
+      <h2>メニュー</h2>
+      <div class="menu-list">
+        <div class="menu-item">
+          <img src="images/menu_1.JPG" alt="ドリンク" />
+          <p>気まぐれジュース - 300円</p>
+        </div>
+        <div class="menu-item">
+          <img src="images/menu_2.JPG" alt="コーヒー" />
+          <p>日替わりコーヒー - 300円</p>
+        </div>
+         <div class="menu-item">
+          <img src="images/menu_3.JPG" alt="蒸しパン" />
+          <p>蒸したパン - 400円</p>
+        </div>
+         <div class="menu-item">
+          <img src="images/menu_4.JPG" alt="カレー" />
+          <p>カレー - 500円</p>
+        </div>
+         <div class="menu-item">
+          <img src="images/menu_5.JPG" alt="プリン" />
+          <p>ココア粉プリン - 450円</p>
+        </div>
+         <div class="menu-item">
+          <img src="images/menu_6.JPG" alt="シャーベット" />
+          <p>シャーベット - 400円</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="access">
+      <h2>アクセス</h2>
+      <p>香椎のどこかにあります</p>
+
+		<div class="map-container">
+    		<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13241.172040511289!2d130.425337!3d33.6609281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541919f257ad2d7%3A0x3c2cf24696a08f30!2z5q2v5rKi6aeF!5e0!3m2!1sja!2sjp!4v1720338495276!5m2!1sja!2sjp"
+				width="100%"
+				height="300"
+				style="border:0;"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade">
+    		</iframe>
+  		</div>
+    </section>
+  </main>
+
+  <button id="topBtn" title="ページトップへ">↑</button>
+
+  <audio id="bgm" loop>
+    <source src="ensolarado.mp3" type="audio/mpeg" />
+    お使いのブラウザはaudio要素に対応していません。
+  </audio>
+  <button id="musicToggle">🎵 ON</button>
+
+  <script>
+    // ページトップボタン
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = function () {
+      topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    topBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    // BGMコントロール
+    const bgm = document.getElementById("bgm");
+    const musicToggle = document.getElementById("musicToggle");
+    let isPlaying = false;
+    musicToggle.onclick = () => {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        bgm.play();
+        musicToggle.textContent = "🎵 OFF";
+      } else {
+        bgm.pause();
+        musicToggle.textContent = "🎵 ON";
+      }
+    };
+  </script>
+</body>
+</html>
